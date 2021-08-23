@@ -31,10 +31,10 @@ module.exports = {
       // },
 
       // For hosts (please adjust)
-      remotes: {
-        mfe1: 'mfe1@http://localhost:4201/remoteEntry.js',
-        mfe2: 'mfe2@http://localhost:4202/remoteEntry.js',
-      },
+      // remotes: {
+      //   mfe1: 'mfe1@http://localhost:4201/remoteEntry.js',
+      //   mfe2: 'mfe2@http://localhost:4202/remoteEntry.js',
+      // },
 
       shared: share({
         '@angular/core': {

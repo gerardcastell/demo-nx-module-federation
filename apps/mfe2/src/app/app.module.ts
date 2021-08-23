@@ -8,9 +8,10 @@ import { RouterModule } from '@angular/router';
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([], { initialNavigation: 'enabledBlocking' }),
+    RouterModule.forChild([{ path: '', component: AppComponent }]),
   ],
   providers: [],
   bootstrap: [AppComponent],
+  exports: [AppComponent],
 })
 export class AppModule {}
