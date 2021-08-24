@@ -1,5 +1,7 @@
 <div class="main-container">
   <h1>Shell App</h1>
+  <button (click)="onClickLogin()">Switch loggin</button>
+  User logged: {{ isLogged }}
   <div class="anchor-container">
     <a [routerLink]="'/'">Visit Shell</a>
     <a [routerLink]="'/mfe1'">Visit Microfrontend 1</a>

@@ -6,6 +6,7 @@ const share = mf.share;
 const sharedMappings = new mf.SharedMappings();
 sharedMappings.register(path.join(__dirname, '../../tsconfig.base.json'), [
   /* mapped paths to share */
+  '@demo-nx-module-federation/core/data-access-auth',
 ]);
 
 module.exports = {
