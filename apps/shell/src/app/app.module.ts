@@ -8,12 +8,12 @@ import { environment } from '../environments/environment';
 import * as fromAuth from '@demo-nx-module-federation/core/data-access-auth';
 
 import { AppComponent } from './app.component';
+import { CoreDataAccessAuthModule } from '@demo-nx-module-federation/core/data-access-auth';
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     StoreModule.forRoot({}),
-    StoreModule.forFeature(fromAuth.AUTH_FEATURE_KEY, fromAuth.reducer),
     StoreDevtoolsModule.instrument({}),
     RouterModule.forRoot([
       {
@@ -35,6 +35,7 @@ import { AppComponent } from './app.component';
           }).then((m) => m.AppModule),
       },
     ]),
+    CoreDataAccessAuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
