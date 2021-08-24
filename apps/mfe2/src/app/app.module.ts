@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
+import { CoreDataAccessAuthModule } from '@demo-nx-module-federation/core/data-access-auth';
 
 @NgModule({
   declarations: [AppComponent],
