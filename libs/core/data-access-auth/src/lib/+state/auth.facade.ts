@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { select, Store, Action } from '@ngrx/store';
 
 import * as AuthActions from './auth.actions';
+import { AuthEntity } from './auth.models';
 import * as AuthFeature from './auth.reducer';
 import * as AuthSelectors from './auth.selectors';
 
@@ -13,7 +14,7 @@ export class AuthFacade {
    */
   loaded$ = this.store.pipe(select(AuthSelectors.getAuthLoaded));
   allAuth$ = this.store.pipe(select(AuthSelectors.getAllAuth));
-  selectedAuth$ = this.store.pipe(select(AuthSelectors.getSelected));
+  isLogged$ = this.store.pipe(select(AuthSelectors.getIsLogged));
 
   constructor(private readonly store: Store) {}
 
@@ -23,5 +24,9 @@ export class AuthFacade {
    */
   init() {
     this.store.dispatch(AuthActions.init());
+  }
+
+  setAuth(isLogged: boolean): void {
+    this.store.dispatch(AuthActions.setAuth({ auth: { isLogged } }));
   }
 }
