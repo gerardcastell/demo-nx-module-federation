@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@demo-nx-module-federation/core/data-access-auth": [
+        "libs/core/data-access-auth/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

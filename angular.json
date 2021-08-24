@@ -1,6 +1,47 @@
 {
   "version": 1,
   "projects": {
+    "core-data-access-auth": {
+      "projectType": "library",
+      "root": "libs/core/data-access-auth",
+      "sourceRoot": "libs/core/data-access-auth/src",
+      "prefix": "demo-nx-module-federation",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": ["dist/libs/core/data-access-auth"],
+          "options": {
+            "project": "libs/core/data-access-auth/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/core/data-access-auth/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/core/data-access-auth/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/core/data-access-auth"],
+          "options": {
+            "jestConfig": "libs/core/data-access-auth/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/core/data-access-auth/src/**/*.ts",
+              "libs/core/data-access-auth/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "mfe1": {
       "projectType": "application",
       "root": "apps/mfe1",
@@ -9,9 +50,7 @@
       "architect": {
         "build": {
           "builder": "ngx-build-plus:browser",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/mfe1",
             "index": "apps/mfe1/src/index.html",
@@ -19,13 +58,8 @@
             "polyfills": "apps/mfe1/src/polyfills.ts",
             "tsConfig": "apps/mfe1/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "apps/mfe1/src/favicon.ico",
-              "apps/mfe1/src/assets"
-            ],
-            "styles": [
-              "apps/mfe1/src/styles.scss"
-            ],
+            "assets": ["apps/mfe1/src/favicon.ico", "apps/mfe1/src/assets"],
+            "styles": ["apps/mfe1/src/styles.scss"],
             "scripts": [],
             "extraWebpackConfig": "apps/mfe1/webpack.config.js",
             "commonChunk": false
@@ -99,9 +133,7 @@
         },
         "test": {
           "builder": "ngx-build-plus:karma",
-          "outputs": [
-            "coverage/apps/mfe1"
-          ],
+          "outputs": ["coverage/apps/mfe1"],
           "options": {
             "jestConfig": "apps/mfe1/jest.config.js",
             "passWithNoTests": true,
@@ -131,9 +163,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/mfe1-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/mfe1-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -146,9 +176,7 @@
       "architect": {
         "build": {
           "builder": "ngx-build-plus:browser",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/mfe2",
             "index": "apps/mfe2/src/index.html",
@@ -156,13 +184,8 @@
             "polyfills": "apps/mfe2/src/polyfills.ts",
             "tsConfig": "apps/mfe2/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "apps/mfe2/src/favicon.ico",
-              "apps/mfe2/src/assets"
-            ],
-            "styles": [
-              "apps/mfe2/src/styles.scss"
-            ],
+            "assets": ["apps/mfe2/src/favicon.ico", "apps/mfe2/src/assets"],
+            "styles": ["apps/mfe2/src/styles.scss"],
             "scripts": [],
             "extraWebpackConfig": "apps/mfe2/webpack.config.js",
             "commonChunk": false
@@ -236,9 +259,7 @@
         },
         "test": {
           "builder": "ngx-build-plus:karma",
-          "outputs": [
-            "coverage/apps/mfe2"
-          ],
+          "outputs": ["coverage/apps/mfe2"],
           "options": {
             "jestConfig": "apps/mfe2/jest.config.js",
             "passWithNoTests": true,
@@ -268,9 +289,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/mfe2-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/mfe2-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -283,9 +302,7 @@
       "architect": {
         "build": {
           "builder": "ngx-build-plus:browser",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/shell",
             "index": "apps/shell/src/index.html",
@@ -293,13 +310,8 @@
             "polyfills": "apps/shell/src/polyfills.ts",
             "tsConfig": "apps/shell/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "apps/shell/src/favicon.ico",
-              "apps/shell/src/assets"
-            ],
-            "styles": [
-              "apps/shell/src/styles.scss"
-            ],
+            "assets": ["apps/shell/src/favicon.ico", "apps/shell/src/assets"],
+            "styles": ["apps/shell/src/styles.scss"],
             "scripts": [],
             "extraWebpackConfig": "apps/shell/webpack.config.js",
             "commonChunk": false
@@ -373,9 +385,7 @@
         },
         "test": {
           "builder": "ngx-build-plus:karma",
-          "outputs": [
-            "coverage/apps/shell"
-          ],
+          "outputs": ["coverage/apps/shell"],
           "options": {
             "jestConfig": "apps/shell/jest.config.js",
             "passWithNoTests": true,
@@ -405,9 +415,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/shell-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/shell-e2e/**/*.{js,ts}"]
           }
         }
       }
